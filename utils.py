@@ -1,6 +1,6 @@
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
-from info import *
+from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM
 from imdb import Cinemagoer
 import asyncio
 from pyrogram.types import Message, InlineKeyboardButton
@@ -39,7 +39,7 @@ class temp(object):
     U_NAME = None
     B_NAME = None
     SETTINGS = {}
-    
+
 async def is_subscribed(bot, query):
     try:
         user = await bot.get_chat_member(AUTH_CHANNEL, query.from_user.id)
